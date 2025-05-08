@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF5E84</color>
+    <color name="colorPrimaryDark">#E63E6D</color>
+    <color name="colorAccent">#FF87B2</color>
+
+    <!-- Gradient colors - Day -->
+    <color name="gradientStartDay">#6A11CB</color>
+    <color name="gradientEndDay">#2575FC</color>
+
+    <!-- Text colors -->
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#E0E0E0</color>
+
+    <!-- Button colors -->
+    <color name="buttonBackground">#FF5E84</color>
+    <color name="buttonText">#FFFFFF</color>
+    <color name="coral_pink">#FF6F61</color>
+
+    <color name="gradientStartNight">#121212</color>
+    <color name="gradientEndNight">#3A3A3A</color>
+
+</resources>

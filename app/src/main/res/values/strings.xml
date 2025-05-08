@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name -->
+    <string name="app_name">likes2love</string>
+
+    <!-- Main Activity -->
+    <string name="welcome_title">Welcome to likes2love!</string>
+    <string name="welcome_description">Analyze your Facebook or TikTok links for sentiment insights...</string>
+    <string name="get_started">Get Started</string>
+    <string name="choose_title">Choose your application: </string>
+
+    <!-- Content descriptions for accessibility -->
+    <string name="logo_content_description">likes2love logo</string>
+    <string-array name="model_options">
+        <item>BERT</item>
+        <item>RandomForest</item>
+        <item>RoBerta</item>
+        <item>GPT</item>
+    </string-array>
+</resources>

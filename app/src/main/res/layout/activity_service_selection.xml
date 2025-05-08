@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app=    "http://schemas.android.com/apk/res-auto"
+    xmlns:tools= "http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".ServiceSelectionActivity">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:showText="false"
+        android:thumb="@drawable/switch_thumb"
+        android:track="@drawable/switch_track"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvChooseService"
+        style="@style/TitleTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_title"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/switchTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btnFacebook"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_facebook"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toBottomOf="@id/tvChooseService"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnTikTok"
+        tools:ignore="ContentDescription"
+        android:importantForAccessibility="no"/>
+
+    <ImageButton
+        android:id="@+id/btnTikTok"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="28dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_tiktok"
+        android:contentDescription="@null"
+        tools:ignore="ContentDescription"
+        android:importantForAccessibility="no"
+        app:layout_constraintTop_toBottomOf="@id/tvChooseService"
+        app:layout_constraintStart_toEndOf="@id/btnFacebook"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="316dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
+        tools:ignore="ContentDescription"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- overlay menu below -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/menu_background"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <TextView
+            android:id="@+id/menuHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:layout_marginTop="200dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:padding="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/menuAnalyse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Analyse"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:padding="24dp"
+            app:layout_constraintTop_toBottomOf="@id/menuHistory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/menuAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:padding="24dp"
+            app:layout_constraintTop_toBottomOf="@id/menuAnalyse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/menuHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:padding="24dp"
+            app:layout_constraintTop_toBottomOf="@id/menuAbout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/menuDimmer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/menuHome"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
