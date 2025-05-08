@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Array pentru opțiunile de model -->
+    <string-array name="model_options">
+        <item>BERT</item>
+        <item>GPT</item>
+        <item>RoBERTa</item>
+        <item>RandomForest</item>
+    </string-array>
+</resources>

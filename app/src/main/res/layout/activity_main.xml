@@ -23,7 +23,6 @@
         android:layout_width="140dp"
         android:layout_height="100dp"
         android:layout_marginTop="180dp"
-        android:contentDescription="@string/logo_content_description"
         android:src="@drawable/ic_heart_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

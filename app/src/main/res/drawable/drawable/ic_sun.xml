@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+
+    <!-- Sun core -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M12,6
+                          a6,6 0 1,0 0,12
+                          a6,6 0 0,0 0,-12z"/>
+
+    <!-- Ray at 0° (right) – now 4dp long -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M20,11h4v2h-4z"/>
+
+    <!-- Ray at 45° -->
+    <group android:rotation="45" android:pivotX="12" android:pivotY="12">
+        <path
+            android:fillColor="#FFC107"
+            android:pathData="M20,11h4v2h-4z"/>
+    </group>
+    <!-- Ray at 90° (top) -->
+    <group android:rotation="90" android:pivotX="12" android:pivotY="12">
+        <path
+            android:fillColor="#FFC107"
+            android:pathData="M20,11h4v2h-4z"/>
+    </group>
+    <!-- Ray at 135° -->
+    <group android:rotation="135" android:pivotX="12" android:pivotY="12">
+        <path
+            android:fillColor="#FFC107"
+            android:pathData="M20,11h4v2h-4z"/>
+    </group>
+    <!-- Ray at 180° (left) -->
+    <group android:rotation="180" android:pivotX="12" android:pivotY="12">
+        <path
+            android:fillColor="#FFC107"
+            android:pathData="M20,11h4v2h-4z"/>
+    </group>
+    <!-- Ray at 225° -->
+    <group android:rotation="225" android:pivotX="12" android:pivotY="12">
+        <path
+            android:fillColor="#FFC107"
+            android:pathData="M20,11h4v2h-4z"/>
+    </group>
+    <!-- Ray at 270° (bottom) -->
+    <group android:rotation="270" android:pivotX="12" android:pivotY="12">
+        <path
+            android:fillColor="#FFC107"
+            android:pathData="M20,11h4v2h-4z"/>
+    </group>
+    <!-- Ray at 315° -->
+    <group android:rotation="315" android:pivotX="12" android:pivotY="12">
+        <path
+            android:fillColor="#FFC107"
+            android:pathData="M20,11h4v2h-4z"/>
+    </group>
+</vector>

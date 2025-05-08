@@ -1,0 +1,149 @@
+{
+  "models": [
+    {
+      "name": "BERT",
+      "analyses": [
+        {
+          "url": "https://facebook.com/example/post/123",
+          "sentiment": "Positive",
+          "score": 0.85,
+          "metrics": {
+            "accuracy": 0.87,
+            "precision": 0.82,
+            "recall": 0.89,
+            "f1_score": 0.85
+          },
+          "top_words": [
+            { "word": "great", "count": 12 },
+            { "word": "love", "count": 10 },
+            { "word": "amazing", "count": 8 },
+            { "word": "wonderful", "count": 6 },
+            { "word": "happy", "count": 5 }
+          ],
+          "sentiment_distribution": [
+            { "label": "Very Positive", "value": 35 },
+            { "label": "Positive", "value": 45 },
+            { "label": "Neutral", "value": 15 },
+            { "label": "Negative", "value": 3 },
+            { "label": "Very Negative", "value": 2 }
+          ]
+        },
+        {
+          "url": "https://facebook.com/example/post/456",
+          "sentiment": "Negative",
+          "score": 0.25,
+          "metrics": {
+            "accuracy": 0.81,
+            "precision": 0.78,
+            "recall": 0.83,
+            "f1_score": 0.8
+          },
+          "top_words": [
+            { "word": "bad", "count": 15 },
+            { "word": "terrible", "count": 12 },
+            { "word": "awful", "count": 9 },
+            { "word": "disappointed", "count": 7 },
+            { "word": "poor", "count": 6 }
+          ],
+          "sentiment_distribution": [
+            { "label": "Very Positive", "value": 5 },
+            { "label": "Positive", "value": 10 },
+            { "label": "Neutral", "value": 20 },
+            { "label": "Negative", "value": 40 },
+            { "label": "Very Negative", "value": 25 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RandomForest",
+      "analyses": [
+        {
+          "url": "https://tiktok.com/@user/video/123456",
+          "sentiment": "Neutral",
+          "score": 0.52,
+          "metrics": {
+            "accuracy": 0.79,
+            "precision": 0.75,
+            "recall": 0.81,
+            "f1_score": 0.78
+          },
+          "top_words": [
+            { "word": "okay", "count": 8 },
+            { "word": "fine", "count": 7 },
+            { "word": "average", "count": 6 },
+            { "word": "normal", "count": 5 },
+            { "word": "standard", "count": 4 }
+          ],
+          "sentiment_distribution": [
+            { "label": "Very Positive", "value": 15 },
+            { "label": "Positive", "value": 20 },
+            { "label": "Neutral", "value": 40 },
+            { "label": "Negative", "value": 15 },
+            { "label": "Very Negative", "value": 10 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RoBerta",
+      "analyses": [
+        {
+          "url": "https://tiktok.com/tag/trending",
+          "sentiment": "Very Positive",
+          "score": 0.95,
+          "metrics": {
+            "accuracy": 0.92,
+            "precision": 0.9,
+            "recall": 0.94,
+            "f1_score": 0.92
+          },
+          "top_words": [
+            { "word": "excellent", "count": 18 },
+            { "word": "fantastic", "count": 15 },
+            { "word": "superb", "count": 12 },
+            { "word": "outstanding", "count": 10 },
+            { "word": "perfect", "count": 9 }
+          ],
+          "sentiment_distribution": [
+            { "label": "Very Positive", "value": 60 },
+            { "label": "Positive", "value": 30 },
+            { "label": "Neutral", "value": 8 },
+            { "label": "Negative", "value": 1 },
+            { "label": "Very Negative", "value": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GPT",
+      "analyses": [
+        {
+          "url": "https://facebook.com/groups/example",
+          "sentiment": "Slightly Negative",
+          "score": 0.35,
+          "metrics": {
+            "accuracy": 0.85,
+            "precision": 0.82,
+            "recall": 0.87,
+            "f1_score": 0.84
+          },
+          "top_words": [
+            { "word": "issue", "count": 10 },
+            { "word": "problem", "count": 8 },
+            { "word": "concern", "count": 7 },
+            { "word": "difficult", "count": 6 },
+            { "word": "challenging", "count": 5 }
+          ],
+          "sentiment_distribution": [
+            { "label": "Very Positive", "value": 5 },
+            { "label": "Positive", "value": 15 },
+            { "label": "Neutral", "value": 25 },
+            { "label": "Negative", "value": 40 },
+            { "label": "Very Negative", "value": 15 }
+          ]
+        }
+      ]
+    }
+  ]
+}

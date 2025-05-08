@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
             prefs.edit()
                     .putBoolean(KEY_DARK_MODE, isChecked)
                     .apply();
+
+            // Apply the theme change immediately
             AppCompatDelegate.setDefaultNightMode(
                     isChecked
                             ? AppCompatDelegate.MODE_NIGHT_YES
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         fadeInView(descTextView, 500, 300);
         fadeInView(getStartedButton, 500, 600);
 
-        // 6) “Get Started” click logic
+        // 6) "Get Started" click logic
         getStartedButton.setOnClickListener(v -> {
             v.animate()
                     .scaleX(0.95f).scaleY(0.95f)

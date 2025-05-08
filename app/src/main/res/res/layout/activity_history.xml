@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".HistoryActivity">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:showText="false"
+        android:thumb="@drawable/switch_thumb"
+        android:track="@drawable/switch_track"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
+        tools:ignore="ContentDescription"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvHistoryTitle"
+        style="@style/TitleTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Your History"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Filter Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFilters"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#20FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tvHistoryTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvFilterTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filters"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvModelFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model:"
+                android:textColor="?attr/colorOnPrimary"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvFilterTitle"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spinnerModelFilter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/rounded_spinner_background"
+                android:popupBackground="@drawable/spinner_dropdown_background"
+                app:layout_constraintTop_toTopOf="@id/tvModelFilter"
+                app:layout_constraintBottom_toBottomOf="@id/tvModelFilter"
+                app:layout_constraintStart_toEndOf="@id/tvModelFilter"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDateFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date:"
+                android:textColor="?attr/colorOnPrimary"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvModelFilter"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvStartDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Select start date"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_input_background"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintTop_toTopOf="@id/tvDateFilter"
+                app:layout_constraintBottom_toBottomOf="@id/tvDateFilter"
+                app:layout_constraintStart_toEndOf="@id/tvDateFilter"
+                app:layout_constraintEnd_toStartOf="@id/tvEndDate"/>
+
+            <TextView
+                android:id="@+id/tvEndDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Select end date"
+                android:padding="8dp"
+                android:background="@drawable/rounded_input_background"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintTop_toTopOf="@id/tvDateFilter"
+                app:layout_constraintBottom_toBottomOf="@id/tvDateFilter"
+                app:layout_constraintStart_toEndOf="@id/tvStartDate"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Button
+                android:id="@+id/btnApplyFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply Filters"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_button"
+                android:textColor="@color/buttonText"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvDateFilter"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Button
+                android:id="@+id/btnClearFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/coral_pink"
+                app:layout_constraintTop_toTopOf="@id/btnApplyFilters"
+                app:layout_constraintBottom_toBottomOf="@id/btnApplyFilters"
+                app:layout_constraintEnd_toStartOf="@id/btnApplyFilters"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Table Header -->
+    <LinearLayout
+        android:id="@+id/tableHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="#40FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/cardFilters"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Model"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Date"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- RecyclerView for history items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tableHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Empty state view -->
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="No history items found"
+        android:textSize="18sp"
+        android:textColor="?attr/colorOnPrimary"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tableHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Menu overlay -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/menu_background"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/menuHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_history"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        
+        <TextView
+            android:id="@+id/menuAnalyse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Analyse"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_analyse"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toBottomOf="@id/menuHistory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/menuAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_about"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toBottomOf="@id/menuAnalyse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/menuHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_home"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toBottomOf="@id/menuAbout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/menuDimmer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/menuHome"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

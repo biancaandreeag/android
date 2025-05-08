@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".AnalyseActivity">
+
+    <!-- Dark Mode Switch -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:showText="false"
+        android:thumb="@drawable/switch_thumb"
+        android:track="@drawable/switch_track"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Model Selection Spinner -->
+    <Spinner
+        android:id="@+id/spModel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_spinner_background"
+        android:popupBackground="@drawable/spinner_dropdown_background"
+        android:spinnerMode="dropdown"
+        android:dropDownWidth="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/switchTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Link Input -->
+    <EditText
+        android:id="@+id/etLinkInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter your URL..."
+        android:inputType="textUri"
+        android:minHeight="48dp"
+        android:background="@drawable/rounded_input_background"
+        android:textColorHint="#80FFFFFF"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spModel" />
+
+    <Button
+        android:id="@+id/btnGoAnalyse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:text="Go Analyse"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/buttonText"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/etLinkInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Analysis Results ListView -->
+    <ListView
+        android:id="@+id/lvAnalysisResults"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnGoAnalyse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Floating "+" Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Add new entry"
+        android:src="@drawable/ic_add"
+        android:backgroundTint="@color/coral_pink"
+        app:borderWidth="0dp"
+        app:elevation="8dp"
+        app:tint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
+        tools:ignore="ContentDescription"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Menu overlay -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/menu_background"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/menuHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_history"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        
+        <TextView
+            android:id="@+id/menuAnalyse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Analyse"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_analyse"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toBottomOf="@id/menuHistory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/menuAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_about"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toBottomOf="@id/menuAnalyse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/menuHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_home"
+            android:drawablePadding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:elevation="2dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:layout_constraintTop_toBottomOf="@id/menuAbout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/menuDimmer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/menuHome"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

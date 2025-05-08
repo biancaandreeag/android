@@ -1,20 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- App name -->
-    <string name="app_name">likes2love</string>
+    <string name="app_name">Likes2Love</string>
 
-    <!-- Main Activity -->
-    <string name="welcome_title">Welcome to likes2love!</string>
-    <string name="welcome_description">Analyze your Facebook or TikTok links for sentiment insights...</string>
-    <string name="get_started">Get Started</string>
-    <string name="choose_title">Choose your application: </string>
+    <!-- Common -->
+    <string name="menu_home">Home</string>
+    <string name="menu_history">History</string>
+    <string name="menu_analyse">Analyse</string>
+    <string name="menu_about">About</string>
 
-    <!-- Content descriptions for accessibility -->
-    <string name="logo_content_description">likes2love logo</string>
-    <string-array name="model_options">
-        <item>BERT</item>
-        <item>RandomForest</item>
-        <item>RoBerta</item>
-        <item>GPT</item>
-    </string-array>
+    <!-- Analyse Activity -->
+    <string name="analyse_title">Sentiment Analysis</string>
+    <string name="enter_url">Enter URL to analyse</string>
+    <string name="url_hint">https://example.com</string>
+    <string name="select_model">Select Analysis Model</string>
+    <string name="model_bert">BERT</string>
+    <string name="model_gpt">GPT</string>
+    <string name="model_roberta">RoBERTa</string>
+    <string name="analyse_button">Analyse Sentiment</string>
+    <string name="error_empty_url">Please enter a URL to analyse</string>
+    <string name="error_select_model">Please select a model</string>
+
+    <!-- History Activity -->
+    <string name="history_title">Analysis History</string>
+    <string name="filter_by">Filter by</string>
+    <string name="model">Model</string>
+    <string name="date_range">Date range</string>
+    <string name="select_start_date">Select start date</string>
+    <string name="select_end_date">Select end date</string>
+    <string name="to">to</string>
+    <string name="apply_filters">Apply Filters</string>
+    <string name="clear_filters">Clear Filters</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="sentiment">Sentiment</string>
+    <string name="no_history_items">No analysis history found. Try running some analyses first.</string>
 </resources>

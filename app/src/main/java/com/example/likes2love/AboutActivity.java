@@ -18,6 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import androidx.appcompat.widget.SwitchCompat;
 
 public class AboutActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -81,6 +82,20 @@ public class AboutActivity extends FragmentActivity implements OnMapReadyCallbac
         });
 
         menuDimmer.setOnClickListener(v -> overlay.setVisibility(View.GONE));
+
+        // Theme switch setup
+        SwitchCompat sw = findViewById(R.id.switchTheme);
+        sw.setChecked(darkMode);
+        sw.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            prefs.edit().putBoolean(KEY_DARK_MODE, isChecked).apply();
+
+            // Apply the theme change immediately
+            AppCompatDelegate.setDefaultNightMode(
+                    isChecked
+                            ? AppCompatDelegate.MODE_NIGHT_YES
+                            : AppCompatDelegate.MODE_NIGHT_NO
+            );
+        });
     }
 
     @Override

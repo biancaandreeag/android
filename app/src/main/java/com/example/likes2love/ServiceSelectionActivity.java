@@ -44,6 +44,8 @@ public class ServiceSelectionActivity extends AppCompatActivity {
         sw.setChecked(darkMode);
         sw.setOnCheckedChangeListener((buttonView, isChecked) -> {
             prefs.edit().putBoolean(KEY_DARK_MODE, isChecked).apply();
+
+            // Apply the theme change immediately
             AppCompatDelegate.setDefaultNightMode(
                     isChecked
                             ? AppCompatDelegate.MODE_NIGHT_YES
